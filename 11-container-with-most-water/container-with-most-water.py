@@ -18,7 +18,7 @@ class Solution:
             length=min(height[left],height[right])
             width=right-left
             area=length*width
-            max_area=max(max_area,length*width)
+            max_area=max(max_area,area)
             if height[left]<height[right]:
                 left+=1
             else:
