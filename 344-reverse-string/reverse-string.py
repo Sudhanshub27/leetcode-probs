@@ -3,12 +3,12 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        # n=len(s)
-        # left=0
-        # right=n-1
-        # for i in range(len(s)):
-        #     s[left+i],s[right-i]=s[right-i],s[left+i]
-        s.reverse()
+        n=len(s)
+        left=0
+        right=n-1
+        for i in range(int(len(s)/2)):
+            s[left+i],s[right-i]=s[right-i],s[left+i]
+        # s.reverse()
             
             
         
