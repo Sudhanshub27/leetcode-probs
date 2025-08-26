@@ -8,18 +8,19 @@ class Solution:
     #         if matrix[i][j]==target:
     #             return True
     #    return False 
-        new_list=[]
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
-                new_list.append(matrix[i][j])
+        m=len(matrix)
+        n=len(matrix[0])
         l=0
-        r=len(new_list)-1
+        r=(m*n)-1
         while l<=r:
-            m=(l+r)//2
-            if new_list[m]<target:
-                l=m+1
-            elif new_list[m]>target:
-                r=m-1
+            mid=(l+r)//2
+            row=mid//n
+            col=mid%n
+            val=matrix[row][col]
+            if val<target:
+                l=mid+1
+            elif val>target:
+                r=mid-1
             else:
                 return True
         return False                
