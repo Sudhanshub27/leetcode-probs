@@ -4,7 +4,7 @@ class Solution:
         i=0
         n=len(needle)
         m=len(haystack)
-        while i<=m-n:
+        while i<=m:
             result.append(haystack[i:i+n])
             i+=1
         for i in range(len(result)):
