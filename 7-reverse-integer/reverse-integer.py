@@ -1,33 +1,30 @@
 class Solution:
     def reverse(self, x: int) -> int:
-        string=""
-        if x>(2**31-1):
-            return 0
-        else:
-            if x>0:
-                while x>9:
-                    n=x%10
-                    string+=str(n)
-                    x=x//10
-                string+=str(x)
-                string=int(string)
-                if string>(2**31-1):
-                    return 0
-                else:
-                    return string
-            elif x<0:
-                x=x*(-1)
-                while x>9:
-                    n=x%10
-                    string+=str(n)
-                    x=x//10
-                string+=str(x)
-                string="-"+string
-                string=int(string)
-                if string<(-2**31):
-                    return 0
-                else:
-                    return string
+        result=0
+        if x>0 and x<=(2**31)-1 :
+            while x>0:
+                ld=x%10
+                result=(result*10)+ld
+                x=x//10
+            result+=x
+            if result<(2**31)-1 and result>-2**31:
+                return result
             else:
                 return 0
+        elif x<0 and x>=-2**31:
+            x*=(-1)
+            while x>0:
+                ld=x%10
+                result=(result*10)+ld
+                x=x//10
+            result+=x
+            ans=result*(-1)
+            if ans<(2**31)-1 and ans>-2**31:
+                return ans
+            else:
+                return 0
+        else:
+            return 0
+
+
         
