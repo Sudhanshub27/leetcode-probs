@@ -1,7 +1,7 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         # ans=[]
-        # n=len(nums)
+        # n=len(nums) tle as 0 of n2
         # for i in range(n):
         #     a=i
         #     product=1
